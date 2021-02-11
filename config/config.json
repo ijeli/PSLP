@@ -1,0 +1,16 @@
+{
+    "development": {
+      "username": "root",
+      "password": "Jjb117jjB",
+      "database": "PHOTOSHOOT_LOCATION_DB",
+      "host": "localhost",
+      "dialect": "mysql"
+    },
+  
+    "production": {
+      "use_env_variable": "JAWSDB_URL",
+      "dialect": "mysql"
+    }
+  }
+  
+  
