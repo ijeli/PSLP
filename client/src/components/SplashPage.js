@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import API from '../utils/API';
-import axios from 'axios';
 import exifr from 'exifr'; //newer model which support .heic
 
 const SplashPage = () => {
@@ -10,7 +9,9 @@ const SplashPage = () => {
 
     useEffect( () => {
         API.getAllImageFiles()
-            .then(res => console.log(res.data))
+            .then(data => {
+                console.log(data)
+            })
             .catch(console.err);
     }, [])
 
@@ -25,7 +26,6 @@ const SplashPage = () => {
         let metaDataExport;
 
         let output = await exifr.parse(file)
-        console.log(output);
         if(!output) {
             metaDataExport = new metaDataExportObject("N/A","N/A",0,0)
         } else {
@@ -56,7 +56,7 @@ const SplashPage = () => {
 
         API.postOneImageFile(postOptions)
             .then(res => {
-                console.log(res.data);
+                console.log(res.json());
                 alert('Image Uploaded!');
             })
             .catch(console.err);
