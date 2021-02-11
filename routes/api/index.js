@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const locationRoutes = require('./locations');
+const imageFileRoutes = require('./imageFileRoutes');
 const db = require('../../models');
+
+router.use('/img', imageFileRoutes);
 
 module.exports = router;
