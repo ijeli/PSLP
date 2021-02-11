@@ -2,14 +2,14 @@ const db = require('../models');
 
 module.exports = {
     findAllImageFiles: (req, res) => {
-        db.Files
+        db.ImageFiles
         .findAll()
         .then(images => res.json(images))
         .catch(err => res.status(500).json(err));
     },
 
     findOneImageFile: (req, res) => {
-        db.Files
+        db.ImageFiles
         .findByPk(req.params.id)
         .then(image => res.json(image))
         .catch(console.err);
@@ -31,7 +31,7 @@ module.exports = {
             longitude:req.body.fileMetaData[3]
         }
     
-        db.Files
+        db.ImageFiles
             .create(fileInfoObject)
             .then(image => res.json(image))
             .catch(console.err)

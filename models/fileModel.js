@@ -1,7 +1,7 @@
 const { sequelize } = require(".");
 
 module.exports = (sequelize, DataTypes) => {
-    let Files = sequelize.define("Files", {
+    let ImageFiles = sequelize.define("ImageFiles", {
         name: {
             type: DataTypes.STRING,
             validate: { notEmpty: true }
@@ -33,5 +33,5 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DECIMAL(15,10)
         }
     });
-    return Files;
+    return ImageFiles;
 }
